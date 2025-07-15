@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="1" author="VLitvinenko">
+        <createSequence
+                sequenceName="post_offices_seq"
+                startValue="1"
+                incrementBy="1"
+                minValue="1"
+                cycle="false"/>
+    </changeSet>
+
+    <changeSet id="2" author="VLitvinenko">
+        <comment>Добавление тестовых почтовых отделений</comment>
+
+        <insert tableName="post_offices">
+            <column name="id" valueSequenceNext="post_offices_seq"/>
+            <column name="index" value="101000"/>
+            <column name="name" value="Центральное почтовое отделение Москвы"/>
+            <column name="address" value="г. Москва, ул. Мясницкая, 26"/>
+        </insert>
+
+        <insert tableName="post_offices">
+            <column name="id" valueSequenceNext="post_offices_seq"/>
+            <column name="index" value="190000"/>
+            <column name="name" value="Главпочтамт Санкт-Петербурга"/>
+            <column name="address" value="г. Санкт-Петербург, Почтамтская ул., 9"/>
+        </insert>
+
+        <insert tableName="post_offices">
+            <column name="id" valueSequenceNext="post_offices_seq"/>
+            <column name="index" value="630099"/>
+            <column name="name" value="Почтамт Новосибирска"/>
+            <column name="address" value="г. Новосибирск, ул. Советская, 33"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
