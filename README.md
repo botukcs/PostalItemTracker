@@ -5,6 +5,7 @@ Postal Item Tracker - REST API
 В качестве БД - postgresql
 
 Для запуска в application.yml необходимо указать:
+database.url
 datasource.username
 datasource.password
 
