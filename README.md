@@ -1,6 +1,8 @@
 Postal Item Tracker - REST API
 
 Сборка осуществляется с помощью gradle
+В качестве очереди используется Kafka
+В качестве БД - postgresql
 
 Для запуска в application.yml необходимо указать:
 datasource.username
